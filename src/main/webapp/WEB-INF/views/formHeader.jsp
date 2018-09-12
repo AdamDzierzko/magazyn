@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Home Budget</title>
+    <title>MAGAZYN</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<c:out value='/vendor/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
@@ -46,7 +46,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/home">Home Budget</a>
+            <a class="navbar-brand" href="/home">MAGAZYN</a>
         </div>
         <!-- /.navbar-header -->
 
