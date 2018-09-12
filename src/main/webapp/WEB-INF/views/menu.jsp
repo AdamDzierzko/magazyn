@@ -3,14 +3,14 @@
         <ul class="nav in" id="side-menu">
 
             <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i> Users
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Uzytkownicy
                     <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="/user/add"><i class="fa fa-edit fa-fw"></i> Add New User</a>
+                        <a href="/user/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowego uzytkownika</a>
                     </li>
                     <li>
-                        <a href="/user/all"><i class="fa fa-table fa-fw"></i> Show All</a>
+                        <a href="/user/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkich</a>
                     </li>
                 </ul>
             </li>
@@ -20,6 +20,18 @@
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="/typProduktu/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy typ produktu</a>
+                    </li>
+                    <li>
+                        <a href="/typProduktu/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Typ Czesci
+                    <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/typProduktu/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy typ czesci</a>
                     </li>
                     <li>
                         <a href="/typProduktu/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>

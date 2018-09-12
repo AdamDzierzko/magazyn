@@ -1,6 +1,7 @@
 package adam.magazyn.controller;
 
 import adam.magazyn.entity.TypProduktu;
+import adam.magazyn.entity.User;
 import adam.magazyn.service.TypProduktuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,4 +57,15 @@ public class TypProduktuController {
         model.addAttribute("typyProduktu", typProduktuService.findOne(id));
         return "typProduktu/edit";
     }
+
+    @PostMapping("/edit/*")
+    public String editPerform(@Valid TypProduktu typProduktu, BindingResult result) {
+        if (result.hasErrors()) {
+            return "typProduktu/edit";
+        }
+        typProduktuService.save(typProduktu);
+        return "redirect:/typProduktu/all";
+
+    }
+
 }
