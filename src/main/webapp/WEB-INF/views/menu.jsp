@@ -15,6 +15,18 @@
                 </ul>
             </li>
             <li>
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Typ Produktu
+                    <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/typProduktu/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy typ produktu</a>
+                    </li>
+                    <li>
+                        <a href="/typProduktu/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Budgets<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>

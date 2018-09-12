@@ -6,7 +6,7 @@
 <div id="page-wrapper" style="min-height: 474px;">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Użytkownicy</h1>
+            <h1 class="page-header">Typy produktu</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -14,26 +14,26 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-table fa-fw"></i> Użytkownicy
+                    <i class="fa fa-table fa-fw"></i> Typy produktu
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <table width="100%" class="table table-hover" id="dataTables-example">
                         <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <th>Delete/Edit</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <c:forEach items="${users}" var="user">
+                        <c:forEach items="${typyProduktu}" var="type">
                             <tr>
-                                <td>${user.id}</td>
-                                <td>${user.name}</td>
+                                <td>${type.id}</td>
+                                <td>${type.typ}</td>
                                 <td>
-                                    <a href="/user/delete/${user.id}">Delete</a>
+                                    <a href="/typProduktu/delete/${type.id}">Delete</a>
                                     <span> / </span>
-                                    <a href="/user/edit/${user.id}">Edit</a>
+                                    <a href="/typProduktu/edit/${type.id}">Edit</a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -50,3 +50,5 @@
 <!-- /#page-wrapper -->
 
 <%@include file="../tableFooter.jsp" %>
+
+
