@@ -2,6 +2,7 @@ package adam.magazyn.controller;
 
 import adam.magazyn.entity.StanProduktu;
 import adam.magazyn.service.StanProduktuService;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import javax.validation.Validator;
 
 @Controller
 @RequestMapping("/stanProduktu")
+@Log
 public class StanProduktuController {
 
     private final StanProduktuService stanProduktuService;

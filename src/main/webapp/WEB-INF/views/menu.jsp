@@ -43,10 +43,22 @@
                     <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="/typProduktu/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy typ czesci</a>
+                        <a href="/typCzesci/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy typ czesci</a>
                     </li>
                     <li>
-                        <a href="/typProduktu/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
+                        <a href="/typCzesci/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Czesci
+                    <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/czesci/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowa czesci</a>
+                    </li>
+                    <li>
+                        <a href="/czesci/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
                     </li>
                 </ul>
             </li>
