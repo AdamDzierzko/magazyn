@@ -27,6 +27,18 @@
                 </ul>
             </li>
             <li>
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Stan Produktu
+                    <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/stanProduktu/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy stan produktu</a>
+                    </li>
+                    <li>
+                        <a href="/stanProduktu/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Typ Czesci
                     <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">

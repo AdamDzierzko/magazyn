@@ -1,8 +1,8 @@
 package adam.magazyn.controller;
 
 import adam.magazyn.entity.TypProduktu;
-import adam.magazyn.entity.User;
 import adam.magazyn.service.TypProduktuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import javax.validation.Validator;
 
 @Controller
 @RequestMapping("/typProduktu")
 public class TypProduktuController {
 
     private final TypProduktuService typProduktuService;
+
+    @Autowired
+    Validator validator;
 
     public TypProduktuController(TypProduktuService typProduktuService) {
         this.typProduktuService = typProduktuService;

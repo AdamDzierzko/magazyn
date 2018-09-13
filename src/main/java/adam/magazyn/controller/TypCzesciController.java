@@ -3,6 +3,7 @@ package adam.magazyn.controller;
 import adam.magazyn.entity.TypCzesci;
 import adam.magazyn.entity.TypProduktu;
 import adam.magazyn.service.TypCzesciService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import javax.validation.Validator;
 
 @Controller
 @RequestMapping("/typCzesci")
@@ -22,6 +24,9 @@ public class TypCzesciController {
     public TypCzesciController(TypCzesciService typCzesciService) {
         this.typCzesciService = typCzesciService;
     }
+
+    @Autowired
+    Validator validator;
 
     @GetMapping("/add")
     public String addNew(Model model) {
