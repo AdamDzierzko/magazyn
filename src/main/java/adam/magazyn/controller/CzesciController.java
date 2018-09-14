@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import javax.validation.Validator;
+import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/czesci")
@@ -53,6 +54,7 @@ public class CzesciController {
             return "czesci/add";
         }
 
+        czesci.setData(LocalDateTime.now());
         czesciService.save(czesci);
         return "redirect:/czesci/all";
     }
@@ -86,6 +88,7 @@ public class CzesciController {
             return "czesci/edit";
         }
 
+        czesci.setData(LocalDateTime.now());
         czesciService.save(czesci);
         return "redirect:/czesci/all";
     }

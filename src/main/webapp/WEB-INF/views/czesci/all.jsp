@@ -22,6 +22,7 @@
                         <thead>
                         <tr>
                             <td>Id</td>
+                            <td>Data</td>
                             <td>Nazwa</td>
                             <td>Ilosc</td>
                             <td>Uzytkownik</td>
@@ -32,6 +33,7 @@
                         <c:forEach items="${czesci}" var="czesci">
                             <tr>
                                 <td>${czesci.id}</td>
+                                <td>${czesci.data}</td>
                                 <td>${czesci.nazwa}</td>
                                 <td>${czesci.ilosc}</td>
                                 <td>${czesci.user.name}</td>
