@@ -23,7 +23,13 @@ public class Czesci {
     @Column(unique = true, nullable = false, length = 200)
     private String nazwa;
 
-    @Digits(integer = 15, fraction = 0)
+    @Digits(integer = 30, fraction = 0)
     @Column(unique = true, nullable = false, length = 50)
     private int ilosc;
+
+    @ManyToOne
+    private User user;
+
+    @ManyToOne
+    private TypCzesci typCzesci;
 }

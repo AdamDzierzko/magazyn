@@ -24,6 +24,8 @@
                             <td>Id</td>
                             <td>Nazwa</td>
                             <td>Ilosc</td>
+                            <td>Uzytkownik</td>
+                            <td>Typ czesci</td>
                             <th>Delete/Edit</th>
                         </tr>
                         </thead>
@@ -32,6 +34,8 @@
                                 <td>${czesci.id}</td>
                                 <td>${czesci.nazwa}</td>
                                 <td>${czesci.ilosc}</td>
+                                <td>${czesci.user.name}</td>
+                                <td>${czesci.typCzesci.typ}</td>
                                 <td>
                                     <a href="/czesci/delete/${czesci.id}">Delete</a>
                                     <span> / </span>
