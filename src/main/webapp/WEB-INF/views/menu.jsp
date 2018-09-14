@@ -39,11 +39,11 @@
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i> Typ Czesci
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Typ elementu
                     <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="/typCzesci/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy typ czesci</a>
+                        <a href="/typCzesci/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy typ elementu</a>
                     </li>
                     <li>
                         <a href="/typCzesci/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
@@ -51,11 +51,11 @@
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i> Czesci
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Elementy
                     <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="/czesci/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowa czesci</a>
+                        <a href="/czesci/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy elementy</a>
                     </li>
                     <li>
                         <a href="/czesci/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
