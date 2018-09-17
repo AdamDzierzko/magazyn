@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.Validator;
@@ -90,6 +87,27 @@ public class CzesciController {
 
         czesci.setData(LocalDateTime.now());
         czesciService.save(czesci);
+        return "redirect:/czesci/all";
+    }
+
+    @GetMapping("/zmiana/{id}")
+    public String zmiana(Model model, @PathVariable Long id) {
+        model.addAttribute("czesci", czesciService.findOne(id));
+
+        return "czesci/zmiana";
+    }
+
+    @PostMapping("/zmiana/*")
+    public String zmianaPreform(Model model, @RequestParam String z, @RequestParam String i) {
+        //  czesciService.zmianaIlości(zmiana);
+        model.addAttribute("czesc", new Czesci());
+        System.out.println(z);
+        System.out.println(i);
+
+        int a = Integer.parseInt(z);
+        Long b = Long.parseLong(i);
+
+        czesciService.zmianaIlości(a, b);
         return "redirect:/czesci/all";
     }
 

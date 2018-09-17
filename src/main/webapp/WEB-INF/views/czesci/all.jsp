@@ -28,6 +28,7 @@
                             <td>Uzytkownik</td>
                             <td>Typ czesci</td>
                             <th>Delete/Edit</th>
+                            <th>Zmiana ilości</th>
                         </tr>
                         </thead>
                         <c:forEach items="${czesci}" var="czesci">
@@ -42,6 +43,8 @@
                                     <a href="/czesci/delete/${czesci.id}">Delete</a>
                                     <span> / </span>
                                     <a href="/czesci/edit/${czesci.id}">Edit</a>
+                                </td>
+                                <td><a href="/czesci/zmiana/${czesci.id}">Zmiana ilosci</a>
                                 </td>
                             </tr>
                         </c:forEach>

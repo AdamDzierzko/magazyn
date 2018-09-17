@@ -3,11 +3,13 @@ package adam.magazyn.service;
 import adam.magazyn.entity.Czesci;
 import adam.magazyn.repository.CzesciRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
+@Transactional
 public class CzesciService {
 
     private final CzesciRepository czesciRepository;
@@ -32,5 +34,7 @@ public class CzesciService {
         return czesciRepository.findAll();
     }
 
-
+    public void zmianaIlości(int zmiana, Long i) {
+        czesciRepository.zmianaIlosci(zmiana, i);
+    }
 }

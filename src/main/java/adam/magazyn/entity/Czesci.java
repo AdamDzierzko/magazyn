@@ -31,6 +31,7 @@ public class Czesci {
     private int ilosc;
 
     private LocalDateTime data;
+    private String z;
 
     @ManyToOne
     private User user;
