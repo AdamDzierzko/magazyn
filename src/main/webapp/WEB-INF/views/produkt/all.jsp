@@ -24,6 +24,9 @@
                             <th>Id</th>
                             <th>Nazwa</th>
                             <th>Numer seryjny</th>
+                            <th>Uzytkownik</th>
+                            <th>Stan produktu</th>
+                            <th>Typ produktu</th>
                             <th>Delete/Edit</th>
                         </tr>
                         </thead>
@@ -33,6 +36,9 @@
                                 <td>${product.id}</td>
                                 <td>${product.nazwa}</td>
                                 <td>${product.numerSeryjny}</td>
+                                <td>${product.user.name}</td>
+                                <td>${product.stanProduktu.stan}</td>
+                                <td>${product.typProduktu.typ}</td>
                                 <td>
                                     <a href="/produkt/delete/${product.id}">Delete</a>
                                     <span> / </span>

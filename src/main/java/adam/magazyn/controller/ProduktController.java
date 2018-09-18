@@ -1,7 +1,11 @@
 package adam.magazyn.controller;
 
 import adam.magazyn.entity.Produkt;
+import adam.magazyn.entity.TypProduktu;
 import adam.magazyn.service.ProduktService;
+import adam.magazyn.service.StanProduktuService;
+import adam.magazyn.service.TypProduktuService;
+import adam.magazyn.service.UserService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,9 +25,15 @@ import javax.validation.Validator;
 public class ProduktController {
 
     private final ProduktService produktService;
+    private final StanProduktuService stanProduktuService;
+    private final UserService userService;
+    private final TypProduktuService typProduktuService;
 
-    public ProduktController(ProduktService produktService) {
+    public ProduktController(ProduktService produktService, StanProduktuService stanProduktuService, UserService userService, TypProduktuService typProduktuService) {
         this.produktService = produktService;
+        this.stanProduktuService = stanProduktuService;
+        this.userService = userService;
+        this.typProduktuService = typProduktuService;
     }
 
     @Autowired
@@ -32,13 +42,19 @@ public class ProduktController {
     @GetMapping("/add")
     public String addNew(Model model) {
         model.addAttribute("produkt", new Produkt());
+        model.addAttribute("stanyProduktu", stanProduktuService.findAll());
+        model.addAttribute("users", userService.findAll());
+        model.addAttribute("typyProduktu", typProduktuService.findAll());
         return "produkt/add";
     }
 
     @PostMapping("/add")
-    public String performNew(@Valid Produkt produkt, BindingResult result) {
+    public String performNew(Model model, @Valid Produkt produkt, BindingResult result) {
 
         if (result.hasErrors()) {
+            model.addAttribute("stanyProduktu", stanProduktuService.findAll());
+            model.addAttribute("users", userService.findAll());
+            model.addAttribute("typyProduktu", typProduktuService.findAll());
             return "produkt/add";
         }
         produktService.save(produkt);
@@ -60,13 +76,19 @@ public class ProduktController {
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable Long id) {
         model.addAttribute("product", produktService.findOne(id));
+        model.addAttribute("stanyProduktu", stanProduktuService.findAll());
+        model.addAttribute("users", userService.findAll());
+        model.addAttribute("typyProduktu", typProduktuService.findAll());
         return "produkt/edit";
     }
 
     @PostMapping("/edit/*")
-    public String editPreform(@Valid Produkt produkt, BindingResult result) {
+    public String editPreform(Model model, @Valid Produkt produkt, BindingResult result) {
 
         if (result.hasErrors()) {
+            model.addAttribute("stanyProduktu", stanProduktuService.findAll());
+            model.addAttribute("users", userService.findAll());
+            model.addAttribute("typyProduktu", typProduktuService.findAll());
             return "produkt/edit";
         }
 

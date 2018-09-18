@@ -29,5 +29,12 @@ public class Produkt {
     @Column(unique = true, nullable = false, length = 200)
     private Long numerSeryjny;
 
+    @ManyToOne
+    private StanProduktu stanProduktu;
 
+    @ManyToOne
+    private User user;
+
+    @ManyToOne
+    private TypProduktu typProduktu;
 }
