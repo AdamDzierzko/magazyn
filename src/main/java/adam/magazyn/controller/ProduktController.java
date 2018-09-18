@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import javax.validation.Validator;
+import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/produkt")
@@ -57,6 +58,8 @@ public class ProduktController {
             model.addAttribute("typyProduktu", typProduktuService.findAll());
             return "produkt/add";
         }
+
+        produkt.setData(LocalDateTime.now());
         produktService.save(produkt);
         return "redirect:/produkt/all";
     }
@@ -92,6 +95,7 @@ public class ProduktController {
             return "produkt/edit";
         }
 
+        produkt.setData(LocalDateTime.now());
         produktService.save(produkt);
         return "redirect:/produkt/all";
     }

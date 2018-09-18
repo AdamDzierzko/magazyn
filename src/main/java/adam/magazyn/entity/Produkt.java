@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -28,6 +29,8 @@ public class Produkt {
     @Digits(integer = 30, fraction = 0)
     @Column(unique = true, nullable = false, length = 200)
     private Long numerSeryjny;
+
+    private LocalDateTime data;
 
     @ManyToOne
     private StanProduktu stanProduktu;

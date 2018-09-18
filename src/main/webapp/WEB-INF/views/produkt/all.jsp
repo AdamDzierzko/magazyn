@@ -24,6 +24,7 @@
                             <th>Id</th>
                             <th>Nazwa</th>
                             <th>Numer seryjny</th>
+                            <th>Data</th>
                             <th>Uzytkownik</th>
                             <th>Stan produktu</th>
                             <th>Typ produktu</th>
@@ -36,6 +37,7 @@
                                 <td>${product.id}</td>
                                 <td>${product.nazwa}</td>
                                 <td>${product.numerSeryjny}</td>
+                                <td>${product.data}</td>
                                 <td>${product.user.name}</td>
                                 <td>${product.stanProduktu.stan}</td>
                                 <td>${product.typProduktu.typ}</td>
