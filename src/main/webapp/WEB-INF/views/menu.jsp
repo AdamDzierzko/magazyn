@@ -39,6 +39,18 @@
                 </ul>
             </li>
             <li>
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Produkty
+                    <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/produkt/add"><i class="fa fa-edit fa-fw"></i> Dodaj nowy produkt</a>
+                    </li>
+                    <li>
+                        <a href="/produkt/all"><i class="fa fa-table fa-fw"></i> Pokaz wszystkie</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Typ elementu
                     <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">

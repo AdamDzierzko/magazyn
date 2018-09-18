@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -24,8 +25,7 @@ public class Produkt {
     @Column(unique = true, nullable = false, length = 200)
     private String nazwa;
 
-    @NotBlank
-    @Size(max = 200)
+    @Digits(integer = 30, fraction = 0)
     @Column(unique = true, nullable = false, length = 200)
     private Long numerSeryjny;
 
