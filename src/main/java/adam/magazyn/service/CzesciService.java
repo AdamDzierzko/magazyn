@@ -37,4 +37,8 @@ public class CzesciService {
     public void zmianaIlości(int zmiana, Long i) {
         czesciRepository.zmianaIlosci(zmiana, i);
     }
+
+    public void zmianaDaty(LocalDateTime d, Long i) {
+        czesciRepository.zmianaDaty(d, i);
+    }
 }

@@ -107,7 +107,10 @@ public class CzesciController {
         int a = Integer.parseInt(z);
         Long b = Long.parseLong(i);
 
+        LocalDateTime d = LocalDateTime.now();
+
         czesciService.zmianaIlości(a, b);
+        czesciService.zmianaDaty(d, b);
         return "redirect:/czesci/all";
     }
 
