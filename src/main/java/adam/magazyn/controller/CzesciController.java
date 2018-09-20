@@ -2,6 +2,7 @@ package adam.magazyn.controller;
 
 import adam.magazyn.entity.Czesci;
 import adam.magazyn.entity.TypCzesci;
+import adam.magazyn.entity.User;
 import adam.magazyn.service.CzesciService;
 import adam.magazyn.service.TypCzesciService;
 import adam.magazyn.service.UserService;
@@ -93,13 +94,15 @@ public class CzesciController {
     @GetMapping("/zmiana/{id}")
     public String zmiana(Model model, @PathVariable Long id) {
         model.addAttribute("czesci", czesciService.findOne(id));
+        model.addAttribute("users", userService.findAll());
+        model.addAttribute("typCzesci", typCzesciService.findAll());
 
         return "czesci/zmiana";
     }
 
     @PostMapping("/zmiana/*")
-    public String zmianaPreform(Model model, @RequestParam String z, @RequestParam String i) {
-        //  czesciService.zmianaIlości(zmiana);
+    public String zmianaPreform(Model model, @RequestParam String z, @RequestParam String i,
+                                @Valid Czesci czesci, BindingResult result) {
         model.addAttribute("czesc", new Czesci());
         System.out.println(z);
         System.out.println(i);
@@ -109,8 +112,10 @@ public class CzesciController {
 
         LocalDateTime d = LocalDateTime.now();
 
+        czesciService.save(czesci);
         czesciService.zmianaIlości(a, b);
         czesciService.zmianaDaty(d, b);
+
         return "redirect:/czesci/all";
     }
 

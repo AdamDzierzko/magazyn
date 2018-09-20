@@ -1,6 +1,7 @@
 package adam.magazyn.service;
 
 import adam.magazyn.entity.Czesci;
+import adam.magazyn.entity.User;
 import adam.magazyn.repository.CzesciRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,4 +42,10 @@ public class CzesciService {
     public void zmianaDaty(LocalDateTime d, Long i) {
         czesciRepository.zmianaDaty(d, i);
     }
+
+    public void zmianaUser(User user, Long id) {
+        czesciRepository.zmianaUser(user, id);
+    }
+
+
 }
