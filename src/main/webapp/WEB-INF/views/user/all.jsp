@@ -40,7 +40,7 @@
                                     <a href="/user/delete/${user.id}">Delete</a>
                                     <span> / </span>
                                     <a href="/user/edit/${user.id}">Editaaaa</a>
-                                      <button type="button" class="btn btn-primary" data-id="${user.id}" data-toggle="modal" data-target="#myModal">Modal</button>
+                                      <button type="button" class=" passingID btn btn-primary" data-id="${user.id}" data-toggle="modal" data-target="#myModal">Modal</button>
                                     
                                 </td>
                             </tr>
@@ -70,7 +70,7 @@
       </div>
       <div class="modal-body">
 			<form id="user">
-				<input type="hidden" id="user_id" name="user_id">
+				<input type="hidden" id="id1" name="id1">
 				<label for="user_name" id="user">Name</label>
 				<input type="text" id="user_name" name="name">
 
@@ -89,16 +89,15 @@
   </div>
 </div>
 
-  			<script>
-		$('#btnSaveEdit').click(function(e) 
-		{
-		var a = 11
+  	<script>
+  	$("#btnSaveEdit").click(function () {
+  	    var ids = $(this).attr('data-id');
+  	  var name = $('#user_name').val();
+  	    $("#idl").val( ids );
+  	   alert(ids)
+  	});
 
-		var b = $(e.relatedTarget).attr('data-id');
-		
-		var name = $('#user_name').val();
-		alert(b)
-		})
-</script> 
+  			
+	</script> 
 
 <%@include file="../tableFooter.jsp" %>
