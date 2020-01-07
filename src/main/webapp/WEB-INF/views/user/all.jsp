@@ -70,7 +70,7 @@
       </div>
       <div class="modal-body">
 			<form id="user">
-				<input type="hidden" id="id" name="id">
+				<input type="hidden" id="user_id" name="user_id">
 				<label for="user_name" id="user">Name</label>
 				<input type="text" id="user_name" name="name">
 
@@ -90,12 +90,14 @@
 </div>
 
   			<script>
-$('#btnSaveEdit').click(function() 
+		$('#btnSaveEdit').click(function(e) 
 		{
 		var a = 11
-		var id = $('#id').val();
+
+		var b = $(e.relatedTarget).attr('data-id');
+		
 		var name = $('#user_name').val();
-		alert(name)
+		alert(b)
 		})
 </script> 
 
