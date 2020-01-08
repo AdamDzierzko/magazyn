@@ -112,13 +112,13 @@
 			name: name
 			},
 			success: function (response) {
-
+				alert("dobrze")
 				},
 			error: function (response) {
-
+				alert("zle")
 				},
 			complete: function () {
-
+				alert("koniec")
 				}
   	  	});
   	
