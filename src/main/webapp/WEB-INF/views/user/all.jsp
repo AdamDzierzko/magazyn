@@ -102,25 +102,26 @@
   	  	var name = $('#namea').val();
   	  	
     	alert(name + ' ' + id);
-  	});
+  	
+      	$.ajax({
+    		type: "post"
+    		url: "http://localhost:1111/user/a"
+    		data: {
+    			id: id,
+    			name: name
+    		},
+    		success: function (response) {
+    			alert("dobrze")
+    		},
+    		error: function (response) {
+    			alert("zle")
+    		},
+    		complete: function () {
+   				alert("koniec")
+   			}
+      	  	});
 
-  	$.ajax({
-		type: "POST"
-		url: "/register"
-		data: {
-			id: id,
-			name: name
-			},
-			success: function (response) {
-				alert("dobrze")
-				},
-			error: function (response) {
-				alert("zle")
-				},
-			complete: function () {
-				alert("koniec")
-				}
-  	  	});
+});
   	
  </script> 
 

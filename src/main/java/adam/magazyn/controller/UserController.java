@@ -1,8 +1,10 @@
 package adam.magazyn.controller;
 
-import adam.magazyn.service.UserService;
-import lombok.extern.java.Log;
-import adam.magazyn.entity.User;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+import javax.validation.Validator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.validation.Valid;
-import javax.validation.Validator;
+import adam.magazyn.entity.User;
+import adam.magazyn.service.UserService;
+import lombok.extern.java.Log;
 
 @Controller
 @RequestMapping("/user")
@@ -74,6 +79,8 @@ public class UserController {
 
     @PostMapping("/edit/*")
     public String editPerform(@Valid User user, BindingResult result) {
+    	
+    	System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
 
         if (result.hasErrors()) {
             return "user/edit";
@@ -82,4 +89,7 @@ public class UserController {
         userService.save(user);
         return "redirect:/user/all";
     }
+    
+
+
 }
