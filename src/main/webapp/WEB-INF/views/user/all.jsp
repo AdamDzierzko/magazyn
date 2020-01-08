@@ -71,7 +71,7 @@
       </div>
       <div class="modal-body">
 			<form id="user">
-				<input type="hidden" id="ida" name="id" value='11'>
+				<input type="hidden" id="ida" name="id">
 				<label for="name" id="name">Name</label>
 				<input type="text" id="namea" name="name">
 
@@ -90,7 +90,7 @@
   </div>
 </div>
 
-  	<script>
+<script>
   	$(".passingID").click(function () {
   	    var ids = $(this).attr('data-id');
   	    $("#ida").val( ids );
@@ -101,9 +101,27 @@
   		var id = $('#ida').val();
   	  	var name = $('#namea').val();
   	  	
-    	   alert(name + ' ' + id);
+    	alert(name + ' ' + id);
   	});
+
+  	$.ajax({
+		type: "POST"
+		url: "/register"
+		data: {
+			id: id,
+			name: name
+			},
+			success: function (response) {
+
+				},
+			error: function (response) {
+
+				},
+			complete: function () {
+
+				}
+  	  	});
   	
-  	</script> 
+ </script> 
 
 <%@include file="../tableFooter.jsp" %>
