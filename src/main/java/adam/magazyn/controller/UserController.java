@@ -74,7 +74,7 @@ public class UserController {
 
         return "user/all";
     }
-
+//sd
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
         userService.delete(id);
