@@ -1,7 +1,7 @@
 package adam.magazyn.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
+
 import javax.validation.Valid;
 import javax.validation.Validator;
 
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -33,6 +34,14 @@ public class UserController {
 
     @Autowired
     Validator validator;
+    
+    @RequestMapping(value = "/gettime", method = RequestMethod.POST)
+    @ResponseBody
+    public String getServerTime () {
+    	System.out.println("-----------getServerTime-----------");
+    	Date d = new Date();
+    	return d.toString();
+    }
 
     @GetMapping("/add")
     public String addNew(Model model) {
@@ -77,6 +86,22 @@ public class UserController {
         return "user/edit";
     }
 
+ 
+ //   @PostMapping("/edit/")
+    @RequestMapping(value = "/ed", method = RequestMethod.POST)
+    public String editPerform(@RequestParam long id, @RequestParam String name) {
+    	
+    	System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
+
+ //       if (result.hasErrors()) {
+ //           return "user/edit";
+ //       }
+
+//        userService.save(user);
+        return "redirect:/user/all";
+    }
+    
+    /*
     @PostMapping("/edit/*")
     public String editPerform(@Valid User user, BindingResult result) {
     	
@@ -89,7 +114,7 @@ public class UserController {
         userService.save(user);
         return "redirect:/user/all";
     }
-    
+    */
 
 
 }

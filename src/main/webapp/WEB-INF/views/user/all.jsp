@@ -8,6 +8,30 @@
 
 <%@include file="../tableHeader.jsp" %>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		//alert("good")
+		$('#id_get_time').click(function() {
+//			alert('naciśnięty')
+/*			var a = 5;
+			var b = "ad"
+
+			var data = {}
+			data["id"] = a
+			data["name"] = b
+			*/
+			
+			$.ajax({
+				url : '/user/gettime',
+				type: "post",
+				success : function (data) {
+					$("#id_time").html(data);
+					}
+				});
+			});
+		});
+</script>
+
 
 <div id="page-wrapper" style="min-height: 474px;">
     <div class="row">
@@ -49,6 +73,8 @@
                         
                         </tbody>
                     </table>
+                    <button id="id_get_time"> Get date</button>
+                    <p id="id_time"></p>
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -90,7 +116,7 @@
   </div>
 </div>
 
-<script>
+  	<script>
   	$(".passingID").click(function () {
   	    var ids = $(this).attr('data-id');
   	    $("#ida").val( ids );
@@ -100,29 +126,27 @@
   		         
   		var id = $('#ida').val();
   	  	var name = $('#namea').val();
+ //	  	var formData  = $("#user").serialize();
   	  	
-    	alert(name + ' ' + id);
+ //   	alert(formData);
+ 
+ 		var data = {}
+ 		data["id"] = $('#ida').val();
+ 		data["name"] = $('#namea').val();
+ 		
+		$.ajax({
+			type : "POST"
+			url : "/user/ed",
+			contentType : 'application/json',
+			data : JSON.stringify(data),
+			dataType: 'json'
+        success : (function() {
+            alert("ajax");
+        });			
+			});
+    	
+  	});
   	
-      	$.ajax({
-    		type: "post"
-    		url: "http://localhost:1111/user/a"
-    		data: {
-    			id: id,
-    			name: name
-    		},
-    		success: function (response) {
-    			alert("dobrze")
-    		},
-    		error: function (response) {
-    			alert("zle")
-    		},
-    		complete: function () {
-   				alert("koniec")
-   			}
-      	  	});
-
-});
-  	
- </script> 
+  	</script>
 
 <%@include file="../tableFooter.jsp" %>
