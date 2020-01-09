@@ -73,7 +73,7 @@ public class UserController {
         model.addAttribute("users", userService.findAll());
 
         return "user/all";
-    }
+   \ }
 //sd
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
