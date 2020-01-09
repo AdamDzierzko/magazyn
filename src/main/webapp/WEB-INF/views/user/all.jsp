@@ -134,18 +134,18 @@
  		var data = {}
  		data["id"] = $('#ida').val();
  		data["name"] = $('#namea').val();
+ 		alert(data)
  		
 		$.ajax({
-			type : "POST"
+			type : "POST",
 			url : "/user/ed",
 			contentType : 'application/json',
 			data : JSON.stringify(data),
-			dataType: 'json'
-        success : (function() {
-            alert("ajax");
-        });			
-			});
-    	
+			dataType: 'json',
+        success : function() {
+            alert("ajax")
+        }
+		});
   	});
   	
   	</script>

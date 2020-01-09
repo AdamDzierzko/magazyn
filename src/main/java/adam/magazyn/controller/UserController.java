@@ -2,6 +2,7 @@ package adam.magazyn.controller;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.validation.Validator;
 
@@ -89,7 +90,7 @@ public class UserController {
  
  //   @PostMapping("/edit/")
     @RequestMapping(value = "/ed", method = RequestMethod.POST)
-    public String editPerform(@RequestParam long id, @RequestParam String name) {
+    public String editPerform(@RequestParam long id, @RequestParam String name, Model model) {
     	
     	System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
 
