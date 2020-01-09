@@ -53,6 +53,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>Delete / Edit</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -35,7 +35,7 @@ public class UserController {
     @Autowired
     Validator validator;
     
-    @RequestMapping(value = "/gettime", method = RequestMethod.POST)
+    @PostMapping("/gettime")
     @ResponseBody
     public String getServerTime () {
     	System.out.println("-----------getServerTime-----------");
